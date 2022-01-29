@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+security_rule_project_one,first.training.model,project-one.model_first_training_model,base.group_user,1,1,1,1

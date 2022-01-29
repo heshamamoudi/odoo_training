@@ -1,0 +1,44 @@
+<odoo>
+  <data>
+
+     <record model="ir.ui.view" id="exercise1_inherit">
+      <field name="name">exercise1.inherit.form</field>
+         <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+
+          <field name="vat" position="after">
+                  <field name="date_of_birth" />
+                  <field name="age" string="Age"/>
+          </field>
+
+      </field>
+    </record>
+
+      <record model="ir.ui.view" id="exercise2_inherit">
+      <field name="name">exercise2.inherit.form</field>
+         <field name="model">product.product</field>
+      <field name="inherit_id" ref="product.product_normal_form_view"/>
+      <field name="arch" type="xml">
+          <field name="detailed_type" position="after">
+              <h5 for="min_age"  style="color:gray; font-size:10px">Please check the client age before selling this product</h5>
+              <field name="min_age"  string="Minimum Age"/>
+          </field>
+
+      </field>
+    </record>
+
+
+     <record model="ir.ui.view" id="exercise3_inherit">
+      <field name="name">exercise3.inherit.form</field>
+         <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+          <xpath expr="//form//sheet//notebook//page/field[@name='order_line']//tree/field[@name='product_uom_qty']" position="after">
+<!--              <field name="dob" />-->
+              <field name="min_age" />
+          </xpath>
+      </field>
+    </record>
+ </data>
+</odoo>

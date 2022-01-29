@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+
+      <record model="ir.actions.act_window" id="action_flower_app1">
+        <field name="name">Flower App Action</field>
+        <field name="res_model" >product.product</field>
+         <field name="view_mode">kanban,tree,form</field>
+          <field name="domain">[('is_flower','=',True)]</field>
+          <field name="context">{'default_is_flower':True}</field>
+    </record>
+
+    <menuitem id="menuItem_flower_app" name="Flower App"  action="action_flower_app1"/>
+  </data>
+</odoo>
+
